@@ -14,7 +14,7 @@ public class CaesarCipher {
         if (shift < 0) {
             return text;
         }
-        return encryptHelp(text, 26 - (shift % 26));
+        return encryptHelp(text, -shift);
     }
 
     private String encryptHelp(String text, int shift) {
@@ -25,10 +25,8 @@ public class CaesarCipher {
         StringBuilder result = new StringBuilder();
         for (char character : text.toCharArray()) {
             if (character != ' ') {
-                int originalAlphabetPosition = character - 'a';
-                int newAlphabetPosition = (originalAlphabetPosition + shift) % 26;
-                char newCharacter = (char) ('a' + newAlphabetPosition);
-                result.append(newCharacter);
+                char newAlphabetPosition = (char) (character + shift);
+                result.append(newAlphabetPosition);
             } else {
                 result.append(character);
             }
