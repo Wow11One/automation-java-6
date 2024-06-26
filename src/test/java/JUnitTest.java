@@ -13,7 +13,7 @@ import static org.junit.jupiter.api.Assertions.assertNotEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
-public class JUnitCaesarCipherTest {
+public class JUnitTest {
 
     public CaesarCipher caesarCipher = new CaesarCipher();
 
